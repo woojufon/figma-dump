@@ -30,6 +30,16 @@ Every property maps 1:1 to CSS. No intermediate JSON. No wasted tokens.
 | Output format | Raw JSON | CSS-ready tree |
 | Token savings | — | **82%** |
 
+Want to compare yourself? Set up the official MCP and try the same design:
+
+```bash
+# Claude Code
+claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp
+
+# Codex
+codex mcp add figma-remote-mcp --url https://mcp.figma.com/mcp
+```
+
 ## Features
 
 - **Compact tree output** — one node per line, indentation = hierarchy

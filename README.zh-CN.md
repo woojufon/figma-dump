@@ -30,6 +30,16 @@
 | 输出格式 | 原始 JSON | CSS 就绪的树 |
 | Token 节省 | — | **82%** |
 
+欢迎自行对比验证，先安装官方 MCP 再用同一个设计稿试试：
+
+```bash
+# Claude Code
+claude mcp add --transport http figma-remote-mcp https://mcp.figma.com/mcp
+
+# Codex
+codex mcp add figma-remote-mcp --url https://mcp.figma.com/mcp
+```
+
 ## 特性
 
 - **紧凑树状输出** —— 每行一个节点，缩进即层级
