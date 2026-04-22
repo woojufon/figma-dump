@@ -19,6 +19,8 @@ We fetched the same complex Figma design with the official Figma MCP and figma-d
 | Output Format | Raw JSON | CSS-ready tree |
 
 > **77% cheaper. 5.6× fewer tokens. And the official MCP blew the context window.**
+>
+> In our tests, the code generated from figma-dump output is also **significantly more accurate** than the official MCP — CSS-ready properties leave less room for LLM hallucination.
 
 | Official Figma MCP | figma-dump |
 |---|---|
