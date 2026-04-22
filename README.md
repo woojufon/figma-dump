@@ -119,7 +119,7 @@ export FIGMA_TOKEN="your-figma-personal-access-token"
 ### As a Claude Code skill
 
 ```
-/figma https://www.figma.com/design/XPACZRSwWV297aqyeltAEc/MyApp?node-id=371-5024
+/figma https://www.figma.com/design/abc-def/MyApp?node-id=123-4566
 ```
 
 ### As a standalone script
@@ -127,11 +127,11 @@ export FIGMA_TOKEN="your-figma-personal-access-token"
 ```bash
 # From URL
 node .claude/skills/figma/scripts/figma_fetch.mjs \
-  --url='https://www.figma.com/design/FILE_KEY/NAME?node-id=371-5024'
+  --url='https://www.figma.com/design/FILE_KEY/NAME?node-id=123-4566'
 
 # From file key + node ID
 node .claude/skills/figma/scripts/figma_fetch.mjs \
-  --file-key=FILE_KEY --node-id=371-5024
+  --file-key=FILE_KEY --node-id=123-4566
 ```
 
 ## Output Format

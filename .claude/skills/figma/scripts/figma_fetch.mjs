@@ -6,8 +6,8 @@
  * Outputs a compact indented tree format with properties directly mappable to CSS.
  *
  * Usage:
- *   node figma_fetch.mjs --url='https://www.figma.com/design/FILE_KEY/NAME?node-id=371-5024'
- *   node figma_fetch.mjs --file-key=FILE_KEY --node-id=371-5024
+ *   node figma_fetch.mjs --url='https://www.figma.com/design/FILE_KEY/NAME?node-id=123-4566'
+ *   node figma_fetch.mjs --file-key=FILE_KEY --node-id=123-4566
  *
  * Environment variables:
  *   FIGMA_TOKEN — Figma Personal Access Token (required)

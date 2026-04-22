@@ -37,13 +37,13 @@ Property reference:
 Pass a Figma design URL:
 
 ```
-/figma https://www.figma.com/design/XPACZRSwWV297aqyeltAEc/Novo-One-Mobile?node-id=371-5024&m=dev
+/figma https://www.figma.com/design/abc-def/xxx?node-id=123-4566&m=dev
 ```
 
 Also supports file key + node id:
 
 ```
-/figma XPACZRSwWV297aqyeltAEc 371-5024
+/figma abc-def 123-4566
 ```
 
 ## Execution Steps
@@ -57,12 +57,12 @@ Also supports file key + node id:
 ```bash
 # URL mode
 node .claude/skills/figma/scripts/figma_fetch.mjs \
-  --url='https://www.figma.com/design/XPACZRSwWV297aqyeltAEc/Novo-One-Mobile?node-id=371-5024&m=dev'
+  --url='https://www.figma.com/design/abc-def/xxx?node-id=123-4566&m=dev'
 
 # file key + node id mode
 node .claude/skills/figma/scripts/figma_fetch.mjs \
-  --file-key=XPACZRSwWV297aqyeltAEc \
-  --node-id=371-5024
+  --file-key=abc-def \
+  --node-id=123-4566
 ```
 
 3. Script outputs indented tree to stdout, present directly to the user.
