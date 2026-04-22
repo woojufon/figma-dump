@@ -91,7 +91,23 @@ claude mcp remove figma-remote-mcp
 codex mcp remove figma-remote-mcp
 ```
 
-### 设置 Figma token
+### 获取 Figma Personal Access Token
+
+使用 Figma API 需要一个访问令牌，按以下步骤创建：
+
+1. 打开 Figma，点击左上角头像，进入 **Settings**
+
+   ![Figma Settings](./assets/grab-figma-access-token__step-1.jpg)
+
+2. 切换到 **Security** 标签页，找到 **Personal access tokens**，点击 **Generate new token**
+
+   ![Generate Token](./assets/grab-figma-access-token__step-2.jpg)
+
+3. 填写名称，确保 **File content** 和 **Dev resources** 至少有读取权限，点击 **Generate token** 并复制
+
+> 详细说明参见 [Figma 官方文档 - 管理个人访问令牌](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens)。
+
+然后设置环境变量：
 
 ```bash
 export FIGMA_TOKEN="your-figma-personal-access-token"

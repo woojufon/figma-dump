@@ -91,7 +91,23 @@ claude mcp remove figma-remote-mcp
 codex mcp remove figma-remote-mcp
 ```
 
-### Set your Figma token
+### Get a Figma Personal Access Token
+
+You need a Figma access token to use the API. Here's how to create one:
+
+1. Open Figma, click your avatar (top-left), then go to **Settings**
+
+   ![Figma Settings](./assets/grab-figma-access-token__step-1.jpg)
+
+2. Switch to the **Security** tab, scroll to **Personal access tokens**, and hit **Generate new token**
+
+   ![Generate Token](./assets/grab-figma-access-token__step-2.jpg)
+
+3. Give it a name, and make sure **File content** and **Dev resources** have at least read access. Click **Generate token** and copy it.
+
+> For full details, see [Figma's official docs on access tokens](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens).
+
+Then set it in your environment:
 
 ```bash
 export FIGMA_TOKEN="your-figma-personal-access-token"
