@@ -75,6 +75,22 @@ git clone https://github.com/anthropics/figma-dump.git .codex/skills/figma
 git clone https://github.com/anthropics/figma-dump.git ~/.codex/skills/figma
 ```
 
+### Disable the official Figma MCP (if installed)
+
+To avoid interference, disable the official Figma MCP before using figma-dump.
+
+In your Claude Code or Codex MCP settings, set the official Figma MCP to `disabled`.
+
+Or remove it entirely:
+
+```bash
+# Claude Code
+claude mcp remove figma-remote-mcp
+
+# Codex
+codex mcp remove figma-remote-mcp
+```
+
 ### Set your Figma token
 
 ```bash

@@ -75,6 +75,22 @@ git clone https://github.com/anthropics/figma-dump.git .codex/skills/figma
 git clone https://github.com/anthropics/figma-dump.git ~/.codex/skills/figma
 ```
 
+### 关闭官方 Figma MCP（如已安装）
+
+使用前请先关闭官方 Figma MCP，避免干扰。
+
+在 Claude Code 或 Codex 的 MCP 设置中，将官方 Figma MCP 设为 `disabled` 即可。
+
+或者删除：
+
+```bash
+# Claude Code
+claude mcp remove figma-remote-mcp
+
+# Codex
+codex mcp remove figma-remote-mcp
+```
+
 ### 设置 Figma token
 
 ```bash
