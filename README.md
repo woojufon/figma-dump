@@ -8,11 +8,21 @@ Export Figma designs as a compact, indented **UI structure tree** with CSS-mappa
 
 ## Why
 
-The official Figma MCP integration consumes **4,159,799 tokens** per design fetch, requiring multiple tool calls to coordinate.
+We fetched the same complex Figma design with the official Figma MCP and figma-dump. Here's what happened:
 
-`figma-dump` does the same job in **749,008 tokens** — a single call, single script.
+| | Official Figma MCP | figma-dump |
+|---|---|---|
+| Total Cost | **$7.4587** | **$1.6952** |
+| Total Tokens | 4,159,799 | 749,008 |
+| Context Window | 100% — overflowed | 23.8% |
+| Tool Calls | Multiple MCP tools | 1 script call |
+| Output Format | Raw JSON | CSS-ready tree |
 
-> **82% fewer tokens. 5.6× more efficient.**
+> **77% cheaper. 5.6× fewer tokens. And the official MCP blew the context window.**
+
+| Official Figma MCP | figma-dump |
+|---|---|
+| ![Official Figma MCP](./assets/figma-offical-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
 
 ```
 [FRAME] "card" w:361 h:HUG bg:#fff radius:12 shadow:0,2,8,0,#0000001a flex:col p:16 gap:12 clip
@@ -22,13 +32,6 @@ The official Figma MCP integration consumes **4,159,799 tokens** per design fetc
 ```
 
 Every property maps 1:1 to CSS. No intermediate JSON. No wasted tokens.
-
-| | Official Figma MCP | figma-dump |
-|---|---|---|
-| Tokens per fetch | 4,159,799 | 749,008 |
-| Tool calls needed | Multiple MCP tools | 1 script call |
-| Output format | Raw JSON | CSS-ready tree |
-| Token savings | — | **82%** |
 
 Want to compare yourself? Set up the official MCP and try the same design:
 

@@ -8,11 +8,21 @@
 
 ## 为什么需要它
 
-官方 Figma MCP 集成每次获取设计消耗 **4,159,799 tokens**，且需要多个 MCP 工具协作调用。
+我们用同一个复杂 Figma 设计稿，分别跑了官方 Figma MCP 和 figma-dump，结果如下：
 
-`figma-dump` 只用 **749,008 tokens** 完成同样的事 —— 一次调用，一个脚本。
+| | 官方 Figma MCP | figma-dump |
+|---|---|---|
+| 总费用 | **$7.4587** | **$1.6952** |
+| 总 Tokens | 4,159,799 | 749,008 |
+| 上下文窗口 | 100% —— 已爆满 | 23.8% |
+| 工具调用 | 多个 MCP 工具协作 | 1 次脚本调用 |
+| 输出格式 | 原始 JSON | CSS 就绪的树 |
 
-> **节省 82% tokens，效率提升 5.6 倍。**
+> **省 77% 费用，省 5.6 倍 tokens。而且官方 MCP 直接把上下文撑爆了。**
+
+| 官方 Figma MCP | figma-dump |
+|---|---|
+| ![官方 Figma MCP](./assets/figma-offical-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
 
 ```
 [FRAME] "card" w:361 h:HUG bg:#fff radius:12 shadow:0,2,8,0,#0000001a flex:col p:16 gap:12 clip
@@ -22,13 +32,6 @@
 ```
 
 每个属性 1:1 映射 CSS。没有中间 JSON，零 token 浪费。
-
-| | 官方 Figma MCP | figma-dump |
-|---|---|---|
-| 每次获取 tokens | 4,159,799 | 749,008 |
-| 需要工具调用 | 多个 MCP 工具协作 | 1 次脚本调用 |
-| 输出格式 | 原始 JSON | CSS 就绪的树 |
-| Token 节省 | — | **82%** |
 
 欢迎自行对比验证，先安装官方 MCP 再用同一个设计稿试试：
 
