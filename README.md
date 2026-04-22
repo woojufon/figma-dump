@@ -50,15 +50,27 @@ codex mcp add figma-remote-mcp --url https://mcp.figma.com/mcp
 
 ## Install
 
+### Claude Code
+
 ```bash
-# Clone into your project's .claude/skills/ directory
+# Project-level (current repo only)
 git clone https://github.com/anthropics/figma-dump.git .claude/skills/figma
 
-# Or just copy the script
-cp figma-dump/.claude/skills/figma/scripts/figma_fetch.mjs .claude/skills/figma/scripts/
+# Global (available in all projects)
+git clone https://github.com/anthropics/figma-dump.git ~/.claude/skills/figma
 ```
 
-Set your Figma token:
+### Codex
+
+```bash
+# Project-level (current repo only)
+git clone https://github.com/anthropics/figma-dump.git .codex/skills/figma
+
+# Global (available in all projects)
+git clone https://github.com/anthropics/figma-dump.git ~/.codex/skills/figma
+```
+
+### Set your Figma token
 
 ```bash
 export FIGMA_TOKEN="your-figma-personal-access-token"
