@@ -8,23 +8,24 @@
 
 ## 为什么需要它
 
-我们用同一个复杂 Figma 设计稿，分别跑了官方 Figma MCP 和 figma-dump，结果如下：
+我们用同一个复杂 Figma 设计稿，分别跑了官方 Figma MCP、[figma-context-mcp](https://github.com/glips/figma-context-mcp)（14.5k stars）和 figma-dump，结果如下：
 
-| | 官方 Figma MCP | figma-dump |
-|---|---|---|
-| 总费用 | **$7.4587** | **$1.6952** |
-| 总 Tokens | 4,159,799 | 749,008 |
-| 上下文窗口 | 100% —— 已爆满 | 23.8% |
-| 工具调用 | 多个 MCP 工具协作 | 1 次脚本调用 |
-| 输出格式 | 原始 JSON | CSS 就绪的树 |
+| | 官方 Figma MCP | figma-context-mcp | figma-dump |
+|---|---|---|---|
+| 总费用 | **$7.4587** | **$2.6759** | **$1.6952** |
+| 总 Tokens | 4,159,799 | 1,272,117 | 749,008 |
+| 上下文窗口 | 100% —— 已爆满 | 25.1% | 23.8% |
+| 工具调用 | 多个 MCP 工具协作 | MCP 工具调用 | 1 次脚本调用 |
+| 输出格式 | 原始 JSON | 简化 JSON | CSS 就绪的树 |
+| 代码还原度 | 低 —— 上下文溢出 | 好 | 好 |
 
-> **省 77% 费用，省 5.6 倍 tokens。而且官方 MCP 直接把上下文撑爆了。**
+> **比官方 MCP 省 77% 费用。比 figma-context-mcp 省 37% 费用。同样的还原度，更少的 tokens。**
 >
-> 实测中，基于 figma-dump 输出生成的代码**还原度也远高于官方 MCP** —— CSS 就绪的属性格式让 LLM 几乎没有幻觉空间。
+> 官方 MCP 直接把上下文撑爆了。figma-context-mcp 生成代码质量不错，但 figma-dump 用**少 41% 的 tokens** 达到了同样的效果 —— CSS 就绪的属性格式让 LLM 几乎没有幻觉空间。
 
-| 官方 Figma MCP | figma-dump |
-|---|---|
-| ![官方 Figma MCP](./assets/figma-offical-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
+| 官方 Figma MCP | figma-context-mcp | figma-dump |
+|---|---|---|
+| ![官方 Figma MCP](./assets/figma-offical-mcp.png) | ![figma-context-mcp](./assets/figma-context-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
 
 ```
 [FRAME] "card" w:361 h:HUG bg:#fff radius:12 shadow:0,2,8,0,#0000001a flex:col p:16 gap:12 clip

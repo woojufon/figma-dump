@@ -8,23 +8,24 @@ Export Figma designs as a compact, indented **UI structure tree** with CSS-mappa
 
 ## Why
 
-We fetched the same complex Figma design with the official Figma MCP and figma-dump. Here's what happened:
+We fetched the same complex Figma design with the official Figma MCP, [figma-context-mcp](https://github.com/glips/figma-context-mcp) (14.5k stars as of 2025-04-22), and figma-dump. Here's what happened:
 
-| | Official Figma MCP | figma-dump |
-|---|---|---|
-| Total Cost | **$7.4587** | **$1.6952** |
-| Total Tokens | 4,159,799 | 749,008 |
-| Context Window | 100% — overflowed | 23.8% |
-| Tool Calls | Multiple MCP tools | 1 script call |
-| Output Format | Raw JSON | CSS-ready tree |
+| | Official Figma MCP | figma-context-mcp | figma-dump |
+|---|---|---|---|
+| Total Cost | **$7.4587** | **$2.6759** | **$1.6952** |
+| Total Tokens | 4,159,799 | 1,272,117 | 749,008 |
+| Context Window | 100% — overflowed | 25.1% | 23.8% |
+| Tool Calls | Multiple MCP tools | MCP tool calls | 1 script call |
+| Output Format | Raw JSON | Simplified JSON | CSS-ready tree |
+| Code Accuracy | Low — context overflow | Good | Good |
 
-> **77% cheaper. 5.6× fewer tokens. And the official MCP blew the context window.**
+> **77% cheaper than official MCP. 37% cheaper than figma-context-mcp. Same accuracy, fewer tokens.**
 >
-> In our tests, the code generated from figma-dump output is also **significantly more accurate** than the official MCP — CSS-ready properties leave less room for LLM hallucination.
+> The official MCP blew the context window entirely. figma-context-mcp produces comparable code quality, but figma-dump uses **41% fewer tokens** to achieve the same result — CSS-ready properties leave less room for LLM hallucination.
 
-| Official Figma MCP | figma-dump |
-|---|---|
-| ![Official Figma MCP](./assets/figma-offical-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
+| Official Figma MCP | figma-context-mcp | figma-dump |
+|---|---|---|
+| ![Official Figma MCP](./assets/figma-offical-mcp.png) | ![figma-context-mcp](./assets/figma-context-mcp.png) | ![figma-dump](./assets/figma-dump.png) |
 
 ```
 [FRAME] "card" w:361 h:HUG bg:#fff radius:12 shadow:0,2,8,0,#0000001a flex:col p:16 gap:12 clip
